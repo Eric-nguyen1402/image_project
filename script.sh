@@ -3,9 +3,9 @@
 # Install packages
 
 
-#sudo apt-get update
-#sudo apt-get upgrade -y
-#sudo apt-get install motion
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install motion
 # ENABLE in config
 CONFIG="/boot/config.txt"
 MOTION="/etc/motion/motion.conf"
