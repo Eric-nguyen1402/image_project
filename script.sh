@@ -174,7 +174,7 @@ fi
 sudo service motion start
 # Setting can bus 
 sudo apt-get install can-utils
-if a line containing can0 exists
+# if a line containing can0 exists
 if grep -Fq "can0" $INTERFACE
 then 
 	echo "can0 exists"
