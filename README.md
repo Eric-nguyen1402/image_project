@@ -12,3 +12,4 @@ nano /etc/dhcpcd.conf
 - sudo raspi-config
 - Choose -> Interface Options -> SSH -> Enable -> Finish
 - sudo reboot
+- sudo chown motion:motion /var/run/motion
