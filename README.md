@@ -8,3 +8,7 @@ nano /etc/dhcpcd.conf
 - static routers=192.168.50.1
 - static domain_name_servers=192.168.50.1 8.8.8.8 fd51:42f8:caae:d92e::1
 - Then: sudo reboot
+* Open ssh in raspberry 
+- sudo raspi-config
+- Choose -> Interface Options -> SSH -> Enable -> Finish
+- sudo reboot
