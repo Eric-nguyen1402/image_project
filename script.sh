@@ -29,7 +29,7 @@ else
 	sudo sh -c "echo 'start_x=1' >> /boot/config.txt"
 	sudo sh -c "echo 'gpu_mem=128' >> /boot/config.txt"
 	sudo sh -c "echo 'dtoverlay=w1-gpio' >> /boot/config.txt"
-	sudo sh -c "echo 'dtoverlay=mcp2515-can0,oscillator=10000000,interrupt=25' >> /boot/config.txt"
+	sudo sh -c "echo 'dtoverlay=mcp2515-can0,oscillator=8000000,interrupt=25' >> /boot/config.txt"
 	sudo sh -c "echo 'dtoverlay=spi-bcm2835-overlay' >> /boot/config.txt"
 	sudo sh -c "echo 'dtoverlay=spi1-1cs' >> /boot/config.txt"
 	sudo sh -c "echo 'dtoverlay=pi3-disable-bt' >> /boot/config.txt"
