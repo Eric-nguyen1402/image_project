@@ -1,7 +1,9 @@
 #! /bin/bash 
 
 # Install packages
-
+#copy file script.sh in home/pi then run
+#sudo chmod +x script.sh
+#sh script.sh
 
 sudo apt-get update
 sudo apt-get upgrade -y
@@ -27,7 +29,7 @@ else
 	sudo sh -c "echo 'start_x=1' >> /boot/config.txt"
 	sudo sh -c "echo 'gpu_mem=128' >> /boot/config.txt"
 	sudo sh -c "echo 'dtoverlay=w1-gpio' >> /boot/config.txt"
-	sudo sh -c "echo 'dtoverlay=mcp2515-can0,oscillator=8000000,interrupt=25' >> /boot/config.txt"
+	sudo sh -c "echo 'dtoverlay=mcp2515-can0,oscillator=10000000,interrupt=25' >> /boot/config.txt"
 	sudo sh -c "echo 'dtoverlay=spi-bcm2835-overlay' >> /boot/config.txt"
 	sudo sh -c "echo 'dtoverlay=spi1-1cs' >> /boot/config.txt"
 	sudo sh -c "echo 'dtoverlay=pi3-disable-bt' >> /boot/config.txt"
@@ -45,58 +47,58 @@ fi
 # if a line containing stream quality exists, replace whole line
 if grep -Fq "stream_quality" $MOTION
 then
-       echo  "stream_quality  exists"
+        echo  "stream_quality  exists"
        sudo sh -c "sed -i 's/stream_quality 50/stream_quality 100/g' $MOTION"
 else
-       sudo sh -c "echo 'stream_quality 100' >> /etc/motion/motion.conf"
+        sudo sh -c "echo 'stream_quality 100' >> /etc/motion/motion.conf"
 fi
 # if a line containing stream_maxrate exists, replace whole line
 if grep -Fq "stream_maxrate" $MOTION
 then
-       echo  "stream_maxrate  exists"
-       sudo sh -c "sed -i 's/stream_maxrate 1/stream_maxrate 30/g' $MOTION"
+          echo  "stream_maxrate  exists"
+        sudo sh -c "sed -i 's/stream_maxrate 1/stream_maxrate 30/g' $MOTION"
 else
-       sudo sh -c "echo 'stream_maxrate 30' >> /etc/motion/motion.conf"
+        sudo sh -c "echo 'stream_maxrate 30' >> /etc/motion/motion.conf"
 fi
 # if a line containing stream_localhost exists, replace whole line
 if grep -Fq "stream_localhost" $MOTION
 then
-       echo  "stream_localhost  exists"
-       sudo sh -c "sed -i 's/stream_localhost on/stream_localhost off/g' $MOTION"
+        echo  "stream_localhost  exists"
+        sudo sh -c "sed -i 's/stream_localhost on/stream_localhost off/g' $MOTION"
 else
-       sudo sh -c "echo 'stream_localhost off' >> /etc/motion/motion.conf"
+        sudo sh -c "echo 'stream_localhost off' >> /etc/motion/motion.conf"
 fi
 # if a line containing stream_motion exists, replace whole line
 if grep -Fq "stream_motion" $MOTION
 then
-       echo  "stream_motion  exists"
-       sudo sh -c "sed -i 's/stream_motion on/stream_motion off/g' $MOTION"
+        echo  "stream_motion  exists"
+        sudo sh -c "sed -i 's/stream_motion on/stream_motion off/g' $MOTION"
 else
-       sudo sh -c "echo 'stream_motion off' >> /etc/motion/motion.conf"
+        sudo sh -c "echo 'stream_motion off' >> /etc/motion/motion.conf"
 fi
 # if a line containing webcontrol_localhost exists, replace whole line
 if grep -Fq "webcontrol_localhost" $MOTION
 then
-       echo  "webcontrol_localhost  exists"
-       sudo sh -c "sed -i 's/webcontrol_localhost on/webcontrol_localhost off/g' $MOTION"
+        echo  "webcontrol_localhost  exists"
+        sudo sh -c "sed -i 's/webcontrol_localhost on/webcontrol_localhost off/g' $MOTION"
 else
-       sudo sh -c "echo 'webcontrol_localhost off' >> /etc/motion/motion.conf"
+        sudo sh -c "echo 'webcontrol_localhost off' >> /etc/motion/motion.conf"
 fi
 # if a line containing framerate exists, replace whole line
 if grep -Fq "framerate" $MOTION
 then
-       echo  "framerate  exists"
-       sudo sh -c "sed -i 's/framerate 2/framerate 1500/g' $MOTION"
+        echo  "framerate  exists"
+        sudo sh -c "sed -i 's/framerate 2/framerate 1500/g' $MOTION"
 else
-       sudo sh -c "echo 'framerate 1500' >> /etc/motion/motion.conf"
+        sudo sh -c "echo 'framerate 1500' >> /etc/motion/motion.conf"
 fi
 # if a line containing start_motion_daemon exists, replace whole line
 if grep -Fq "start_motion_daemon" $MOTIONON
 then
-       echo  "start_motion_daemon  exists"
-       sudo sh -c "sed -i 's/start_motion_daemon=no/start_motion_daemon=yes /g' $MOTIONON"
+        echo  "start_motion_daemon  exists"
+        sudo sh -c "sed -i 's/start_motion_daemon=no/start_motion_daemon=yes /g' $MOTIONON"
 else
-       sudo sh -c "echo 'start_motion_daemon=yes' >> /etc/default/motion"
+        sudo sh -c "echo 'start_motion_daemon=yes' >> /etc/default/motion"
 fi
 
 # if a line containing camera_id exists
@@ -127,34 +129,34 @@ fi
 # if a line containing camera_id exists
 if grep -Fq "camera_id" $CAMERA3
 then
-      echo "camera_id3 exists"
-      sudo sh -c "sed -i '/camera_id/s/#//g' $CAMERA3"
+       echo "camera_id3 exists"
+       sudo sh -c "sed -i '/camera_id/s/#//g' $CAMERA3"
 else
-      sudo sh -c "echo 'camera_id=3' >> /etc/motion/camera3-dist.conf"
+       sudo sh -c "echo 'camera_id=3' >> /etc/motion/camera3-dist.conf"
 fi
 # if a line containing videodevice exists
 if grep -Fq "videodevice" $CAMERA3
 then
-       echo "videodevice3 exists"
-       sudo sh -c "sed -i 's/video2/video4/g' $CAMERA3"
+        echo "videodevice3 exists"
+        sudo sh -c "sed -i 's/video2/video4/g' $CAMERA3"
 else
-       sudo sh -c "echo 'videodevice /dev/video4' >> /etc/motion/camera3-dist."
+        sudo sh -c "echo 'videodevice /dev/video4' >> /etc/motion/camera3-dist."
 fi
 # if a line containing camera_id exists
 if grep -Fq "camera_id" $CAMERA4
 then
-      echo "camera_id4 exists"
-      sudo sh -c "sed -i '/camera_id/s/#//g' $CAMERA4"
+       echo "camera_id4 exists"
+       sudo sh -c "sed -i '/camera_id/s/#//g' $CAMERA4"
 else
-      sudo sh -c "echo 'camera_id=4' >> /etc/motion/camera4-dist.conf"
+       sudo sh -c "echo 'camera_id=4' >> /etc/motion/camera4-dist.conf"
 fi
 # if a line containing videodevice exists
 if grep -Fq "videodevice" $CAMERA4
 then
-       echo "videodevice4 exists"
-       sudo sh -c "sed -i 's/video3/video6/g' $CAMERA4"
+        echo "videodevice4 exists"
+        sudo sh -c "sed -i 's/video3/video6/g' $CAMERA4"
 else
-       sudo sh -c "echo 'videodevice /dev/video6' >> /etc/motion/camera4-dist."
+        sudo sh -c "echo 'videodevice /dev/video6' >> /etc/motion/camera4-dist."
 fi
 # if a line cotaining camera1.conf exists
 if grep -Fq "camera1.conf" $MOTION
@@ -174,7 +176,7 @@ fi
 sudo service motion start
 # Setting can bus 
 sudo apt-get install can-utils
-# if a line containing can0 exists
+#if a line containing can0 exists
 if grep -Fq "can0" $INTERFACE
 then 
 	echo "can0 exists"
@@ -218,12 +220,17 @@ fi
 if grep -Fq "console" $CMDLINE
 then 
 	echo "console exits"
-	sudo sh -c "sed -i '1d' $CMDLINE"
-	sudo sh -c "echo 'root=PARTUUID=b6d6036a-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait' >> /boot/cmdline.txt"
+#	sudo sh -c "sed -i '1d' $CMDLINE"
+	sudo sh -c "echo 'root=PARTUUID=f425bc04-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait' >> /boot/cmdline.txt"
 else
 	echo "console not exits"
 fi
+sudo apt-get install python3-pip
+pip3 install pyserial
+sudo apt-get install openvpn
+pip3 install python-can
+sudo apt-get install python3-numpy
+sudo pip3 install pymysql
+sudo pip3 install rplidar
 # After finishing make new file python in /var/www/ then copy program in these folder
-sudo apt-get install python3-pymysql
-sudo pip3 install pyserial
-
+ 
