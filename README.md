@@ -14,3 +14,5 @@ nano /etc/dhcpcd.conf
 - sudo reboot
 - sudo chown motion:motion /var/run/motion
 - console=serial0,115200 console=tty1 root=PARTUUID=e6c6c0ec-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait
+- sudo apt-get ––purge remove motion
+- 
