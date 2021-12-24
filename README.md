@@ -36,4 +36,5 @@ nano /etc/dhcpcd.conf
 # Setting Openvpn Server in Asus Router
 - ![First](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(32).png)
 - At VPN details choose Advanced settings:
-- 
+- Then setting follow this :
+- ![Second](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(34).png)
