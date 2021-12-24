@@ -33,3 +33,5 @@ nano /etc/dhcpcd.conf
 * Copy file pass.txt in /var/www/
 * Then run command:
 - sudo openvpn /etc/openvpn/client.conf
+# Setting Openvpn Server in Asus Router
+- 
