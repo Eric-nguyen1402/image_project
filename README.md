@@ -40,4 +40,16 @@ nano /etc/dhcpcd.conf
 - ![Second](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(34).png)
 - In other to clients connect together, you must set the Users at Allows Clients table like this :
 - ![Third](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(36).png)
-- 
+- Assign static IP for OpenVPN:
+1. Login into ASUS Router (username + Password)
+2. Type: cd /jffs/scripts
+3. Type: cat clientconnect.sh
+4. Copy this text:
+- #!/bin/sh
+- if["$username"="abcd"];
+- then
+-   echo "ifconfig-push 10.8.0.6 10.8.0.5">>$1
+- elif["$username"="abc"];
+- then
+-   echo "ifconfig-push 10.8.0.22 10.8.0.21">>$1
+- fi
