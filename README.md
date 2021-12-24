@@ -29,3 +29,7 @@ nano /etc/dhcpcd.conf
 # Install openvpn
 - sudo apt-get update
 - sudo apt-get install openvpn
+* Copy file client.conf in /etc/openvpn/ 
+* Copy file pass.txt in /var/www/
+* Then run command:
+- sudo openvpn /etc/openvpn/client.conf
