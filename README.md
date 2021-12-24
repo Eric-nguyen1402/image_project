@@ -26,4 +26,6 @@ nano /etc/dhcpcd.conf
 
 #flip_axis v
 
-
+# Install openvpn
+- sudo apt-get update
+- sudo apt-get install openvpn
