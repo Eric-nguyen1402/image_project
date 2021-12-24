@@ -38,3 +38,6 @@ nano /etc/dhcpcd.conf
 - At VPN details choose Advanced settings:
 - Then setting follow this :
 - ![Second](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(34).png)
+- In other to clients connect together, you must set the Users at Allows Clients table like this :
+- ![Third](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(36).png)
+- 
