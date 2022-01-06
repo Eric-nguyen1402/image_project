@@ -223,5 +223,6 @@ pip3 install python-can
 sudo apt-get install python3-numpy
 sudo pip3 install pymysql
 sudo pip3 install Adafruit_CircuitPython_RPLIDAR
+sudo pip3 install paho-mqtt
 # After finishing make new file python in /var/www/ then copy program in these folder
  
