@@ -216,21 +216,12 @@ then
 	echo "Listen exists"
 	sudo sh -c "sed -i 's/80/8000/g' $APACHEPORT"
 fi
-# Edit file cmline for using GPS 
-if grep -Fq "console" $CMDLINE
-then 
-	echo "console exits"
-#	sudo sh -c "sed -i '1d' $CMDLINE"
-	sudo sh -c "echo 'root=PARTUUID=f425bc04-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait' >> /boot/cmdline.txt"
-else
-	echo "console not exits"
-fi
 sudo apt-get install python3-pip
 pip3 install pyserial
 sudo apt-get install openvpn
 pip3 install python-can
 sudo apt-get install python3-numpy
 sudo pip3 install pymysql
-sudo pip3 install rplidar
+sudo pip3 install Adafruit_CircuitPython_RPLIDAR
 # After finishing make new file python in /var/www/ then copy program in these folder
  
