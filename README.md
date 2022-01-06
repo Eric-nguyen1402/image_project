@@ -1,17 +1,38 @@
 # Project-2020
+## Install Raspberry Pi OS Lite
+Use the [Raspberry Pi Imager](https://www.raspberrypi.org/downloads.../) to install Raspberry Pi OS Lite on SD Card.
+## Set up IP and use SSH to connect Raspberry Pi
+* Open file config.txt in SD Card and add this line.
+```bash
+enable_uart=1
+```
+Now you can use Raspberry via throughout UART with (COMPORT and BAURATE = 115200)
+* Login 
+```bash
+username: pi
+password: raspberry
+```
 * Set up IP
-nano /etc/dhcpcd.conf 
-* Edit this file
-- interface eth0
-- static ip_address=192.168.50.35/24
-- static ip6_address=fd51:42f8:caae:d92e::ff/64
-- static routers=192.168.50.1
-- static domain_name_servers=192.168.50.1 8.8.8.8 fd51:42f8:caae:d92e::1
-- Then: sudo reboot
-* Open ssh in raspberry 
-- sudo raspi-config
-- Choose -> Interface Options -> SSH -> Enable -> Finish
-- sudo reboot
+```bash
+nano /etc/dhcpcd.conf
+```
+Edit this file
+```bash
+interface eth0
+static ip_address=192.168.50.35/24
+static ip6_address=fd51:42f8:caae:d92e::ff/64
+static routers=192.168.50.1
+static domain_name_servers=192.168.50.1 8.8.8.8 fd51:42f8:caae:d92e::1
+```
+* Open ssh in raspberry
+```bash 
+sudo raspi-config
+```
+Choose -> Interface Options -> SSH -> Enable -> Finish
+Then
+```bash
+sudo reboot
+```
 - sudo chown motion:motion /var/run/motion
 - console=serial0,115200 console=tty1 root=PARTUUID=e6c6c0ec-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait
 - sudo apt-get ––purge remove motion
