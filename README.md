@@ -78,7 +78,19 @@ sudo service motion start
 ```
 ## Create website
 Firstly, check database is working or not by entering the hostname_ip. If the webiste shows this page, it is successful.
-
+![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(7).png)
+- Remove file index.html
+```bash
+cd /var/www/html
+sudo rm index.html
+```
+- Copy [code_web](https://github.com/Eric-nguyen1402/Web_control) into var/www/html
+- Check the link and port listening are working or not: hostname_ip:port
+![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(9).png)
+## Create database with phpmyadmin
+Access to the phpmyadmin via link hostname_ip:port/phpmyadmin
+![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(11).png)
+- A
 ## Install openvpn
 * Copy file [client.conf](https://github.com/Eric-nguyen1402/image_project/blob/master/client.conf) into /etc/openvpn/ 
 * Copy file pass.txt into /var/www/
