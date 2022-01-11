@@ -90,14 +90,25 @@ sudo rm index.html
 ## Create database with phpmyadmin
 Access to the phpmyadmin via link hostname_ip:port/phpmyadmin
 ![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(11).png)
-- A
+Create a new database with name: tanker. Then import all sql files: [GY25.sql](https://github.com/Eric-nguyen1402/image_project/blob/master/GY25.sql), [data_XYZ.sql](https://github.com/Eric-nguyen1402/image_project/blob/master/data_XYZ.sql), [data_map.sql](https://github.com/Eric-nguyen1402/image_project/blob/master/data_map.sql), [home_users.sql](https://github.com/Eric-nguyen1402/image_project/blob/master/home_users.sql), [migrations.sql](https://github.com/Eric-nguyen1402/image_project/blob/master/migrations.sql), [move_control.sql](https://github.com/Eric-nguyen1402/image_project/blob/master/move_control.sql), [password_resets.sql](https://github.com/Eric-nguyen1402/image_project/blob/master/password_resets.sql), [record_data.sql](https://github.com/Eric-nguyen1402/image_project/blob/master/record_data.sql), [users.sql](https://github.com/Eric-nguyen1402/image_project/blob/master/users.sql)
+![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(13).png)
 ## Install openvpn
 * Copy file [client.conf](https://github.com/Eric-nguyen1402/image_project/blob/master/client.conf) into /etc/openvpn/ 
 * Copy file pass.txt into /var/www/
-* Then run command:
+* Then run command below to get the openvpn ip :
 ```bash
 sudo openvpn /etc/openvpn/client.conf
 ```
+Then
+```bash
+sudo systemctl enable openvpn@client
+sudo systemctl start openvpn@client
+```
+Check openvpn successfully or not
+```bash
+ifconfig
+```
+![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(15).png)
 ## Setting Openvpn Server in Asus Router
 - ![First](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(32).png)
 - At VPN details choose Advanced settings:
@@ -105,16 +116,24 @@ sudo openvpn /etc/openvpn/client.conf
 - ![Second](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(34).png)
 - In other to clients connect together, you must set the Users at Allows Clients table like this :
 - ![Third](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(36).png)
+## Setting assign ip in Asus Router
+Open SSH and set password for Router. Login to router.asus.com then choose Administration -> System
+![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(16).png)
+![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(17).png)
 - Assign static IP for OpenVPN:
 1. Login into ASUS Router (username + Password)
-2. Type: cd /jffs/scripts
-3. Type: cat clientconnect.sh
-4. Copy this text:
-- #!/bin/sh
-- if["$username"="abcd"];
-- then
--   echo "ifconfig-push 10.8.0.6 10.8.0.5">>$1
-- elif["$username"="abc"];
-- then
--   echo "ifconfig-push 10.8.0.22 10.8.0.21">>$1
-- fi
+```bash
+cd /jffs/scripts
+cat clientconnect.sh
+```
+2. Copy this text:
+```bash
+#!/bin/sh
+if["$username"="abcd"];
+then
+  echo "ifconfig-push 10.8.0.6 10.8.0.5">>$1
+elif["$username"="abc"];
+then
+  echo "ifconfig-push 10.8.0.22 10.8.0.21">>$1
+fi
+```
