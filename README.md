@@ -110,12 +110,12 @@ ifconfig
 ```
 ![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(15).png)
 ## Setting Openvpn Server in Asus Router
-- ![First](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(32).png)
+![First](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(32).png)
 - At VPN details choose Advanced settings:
 - Then setting follow this :
-- ![Second](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(34).png)
+![Second](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(34).png)
 - In other to clients connect together, you must set the Users at Allows Clients table like this :
-- ![Third](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(36).png)
+![Third](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(36).png)
 ## Setting assign ip in Asus Router
 Open SSH and set password for Router. Login to router.asus.com then choose Administration -> System
 ![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(16).png)
