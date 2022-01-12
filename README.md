@@ -59,7 +59,6 @@ Run this command to check all cameras
 v4l2-ctl --list-devices
 ```
 Check settings in camera1-dist.conf. 
-- Run
 ```bash
 sudo nano /etc/motion/camera1-dist.conf
 ```
