@@ -16,7 +16,7 @@ password: raspberry
 ```bash
 nano /etc/dhcpcd.conf
 ```
-Edit this file
+Edit this file. IP address is set up and edited based on which internet you're using for accessing raspberry pi
 ```bash
 interface eth0
 static ip_address=192.168.50.35/24
