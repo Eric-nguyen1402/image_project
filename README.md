@@ -116,17 +116,20 @@ ifconfig
 ![Second](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(34).png)
 - In other to clients connect together, you must set the Users at Allows Clients table like this :
 ![Third](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(36).png)
+* NOTE: when creating a new openvpn client, you must create a new user with username and password then assigning new ip with this username
+## Add new client:
+![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(42).png)
 ## Setting assign ip in Asus Router
 Open SSH and set password for Router. Login to router.asus.com then choose Administration -> System
 ![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(16).png)
 ![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(17).png)
 - Assign static IP for OpenVPN:
-1. Login into ASUS Router (username + Password)
+1. Login into ASUS Router via SSH (username + Password) by using username and password that sets up above 
 ```bash
 cd /jffs/scripts
 cat clientconnect.sh
 ```
-2. Copy this text:
+2. Copy this text: 
 ```bash
 #!/bin/sh
 if["$username"="abcd"];
