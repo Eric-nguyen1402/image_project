@@ -40,7 +40,7 @@ sudo chmod +x script.sh
 sudo ./script.sh
 ```
 - When setting up database. Please choose Apache2 
-- Congigure database for phpmyadmin with dbconfig-common: Yes
+- Configure database for phpmyadmin with dbconfig-common: Yes
 - My SQL application password for phpmyadmin : raspberry
 * When installing PHP in the last step will occur a notice
 * PLease choose IGNORE to pass this step.
