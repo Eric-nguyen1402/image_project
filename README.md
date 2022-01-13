@@ -100,7 +100,7 @@ sudo systemctl enable gps.service
 sudo systemctl start gps.service
 ```
 ## Create website
-Firstly, check database is working or not by entering the hostname_ip. If the webiste shows this page, it is successful.
+Firstly, check database is working or not by entering the hostname_ip. This page will show like this
 ![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(7).png)
 - Remove file index.html
 ```bash
