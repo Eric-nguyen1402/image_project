@@ -75,6 +75,30 @@ Run camera service. And check it working or not by using link hostname_ip:8081(E
 ```bash
 sudo service motion start
 ```
+## Run file during the boot sequence in raspberry at startup
+Create a unit file
+```bash
+cd /lib/systemd/system
+sudo touch gps.service
+sudo nano gps.service
+```
+Add in the following text
+```bash
+[Unit]
+Description=gps on boot
+After=multi-user.target
+[Service]
+ExecStart=/usr/bin/python3 /var/www/python/gps.py
+User=pi
+[Install]
+WantedBy=multi-user.target
+```
+Save then enable and start service
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable gps.service
+sudo systemctl start gps.service
+```
 ## Create website
 Firstly, check database is working or not by entering the hostname_ip. If the webiste shows this page, it is successful.
 ![image](https://raw.githubusercontent.com/Eric-nguyen1402/image_project/master/Screenshot%20(7).png)
